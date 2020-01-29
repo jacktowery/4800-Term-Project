@@ -10,57 +10,281 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/9aef0c2001.js" crossorigin="anonymous"></script>
+    <!-- Scroll Reveal (scroll triggered animations) -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
     <title>Bright Solutions</title>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            // Check for click events on the navbar burger icon
+            $(".navbar-burger").click(function () {
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                $(".navbar-burger").toggleClass("is-active");
+                $(".navbar-menu").toggleClass("is-active");
+
+            });
+        });
+    </script>
+
 </head>
 
 <body>
-    <section class="hero is-primary">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <!--<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">-->
+                <p class="has-text-weight-bold is-size-4">
+                    <i class="far fa-lightbulb"></i>&nbsp;&nbsp;
                     Bright Solutions
-                </h1>
-                <h2 class="subtitle">
-                    We believe in designing for diversity.
-                </h2>
+                </p>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+
+                <a href="#team" class="navbar-item">Team Info</a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Milestones</a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="#milestone-1">Milestone 1</a>
+                        <a class="navbar-item" href="#milestone-2">Milestone 2</a>
+                        <a class="navbar-item" href="#milestone-3">Milestone 3</a>
+                        <a class="navbar-item" href="#milestone-4">Milestone 4</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <section id="intro" class="hero is-primary is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="is-size-1"><i class="far fa-lightbulb"></i></p>
+                <h1 class="title">Bright Solutions</h1>
+                <h2 class="subtitle">We believe in designing for diversity.</h2>
+                <a href="#team" class="button is-light is-outlined"><i class="fas fa-chevron-down"></i>&nbsp; Meet the
+                    Team</a>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="columns has-text-centered">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            Column 1
-                        </div>
+    <section id="team" class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">The Team</h1>
+
+                <div class="columns">
+                    <div class="column">
+                        <p class="is-size-1"><i class="fas fa-user-circle"></i></p>
+                        <p class="is-size-5 has-text-weight-bold">Leanna Abraham</p>
+                        <p class="is-size-6">Subtitle</p>
+                    </div>
+                    <div class="column">
+                        <p class="is-size-1"><i class="fas fa-user-circle"></i></p>
+                        <p class="is-size-5 has-text-weight-bold">Courtney Hogan</p>
+                        <p class="is-size-6">Subtitle</p>
+                    </div>
+                    <div class="column">
+                        <p class="is-size-1"><i class="fas fa-user-circle"></i></p>
+                        <p class="is-size-5 has-text-weight-bold">Nathan Safir</p>
+                        <p class="is-size-6">Subtitle</p>
+                    </div>
+                    <div class="column">
+                        <p class="is-size-1"><i class="fas fa-user-circle"></i></p>
+                        <p class="is-size-5 has-text-weight-bold">Jack Towery</p>
+                        <p class="is-size-6">Subtitle</p>
+                    </div>
+                    <div class="column">
+                        <p class="is-size-1"><i class="fas fa-user-circle"></i></p>
+                        <p class="is-size-5 has-text-weight-bold">Connor Dooley</p>
+                        <p class="is-size-6">Subtitle</p>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            Column 2
-                        </div>
+
+                <a href="#milestones" class="button is-light is-outlined"><i class="fas fa-chevron-down"></i>&nbsp;
+                    Milestones</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="milestones" class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Project Milestones</h1>
+                <div class="columns has-text-centered">
+                    <div class="column">
+                        <a href="#milestone-1">
+                            <div id="milestone-1-card" class="card milestone-card">
+                                <div class="card-content">
+                                    <span class="icon is-large"><i class="fas fa-file-alt fa-3x"></i></span>
+                                    <p class="has-text-weight-bold is-size-4">Milestone 1</p>
+                                    <p class="is-size-6">Understanding the Problem</p>
+                                    <p class="is-size-7 is-uppercase">January 29, 2020</p>
+                                    <div class="icon milestone-card-arrow has-text-grey-light">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            Column 3
-                        </div>
+                    <div class="column">
+                        <a href="#milestone-2">
+                            <div id="milestone-2-card" class="card milestone-card">
+                                <div class="card-content">
+                                    <span class="icon is-large"><i class="fas fa-file-image fa-3x"></i></span>
+                                    <p class="has-text-weight-bold is-size-4">Milestone 2</p>
+                                    <p class="">Develop Design Alternatives</p>
+                                    <p class="is-size-7 is-uppercase">TBD</p>
+                                    <div class="icon milestone-card-arrow has-text-grey-light">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            Column 4
-                        </div>
+                    <div class="column">
+                        <a href="#milestone-3">
+                            <div id="milestone-3-card" class="card milestone-card">
+                                <div class="card-content">
+                                    <span class="icon is-large"><i class="fas fa-file-code fa-3x"></i></span>
+                                    <p class="has-text-weight-bold is-size-4">Milestone 3</p>
+                                    <p class="">Implemnent a Prototype</p>
+                                    <p class="is-size-7 is-uppercase">TBD</p>
+                                    <div class="icon milestone-card-arrow has-text-grey-light">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="#milestone-4">
+                            <div id="milestone-4-card" class="card milestone-card">
+                                <div class="card-content">
+                                    <span class="icon is-large"><i class="fas fa-file-signature fa-3x"></i></span>
+                                    <p class="has-text-weight-bold is-size-4">Milestone 4</p>
+                                    <p class="">Evaluate the Design</p>
+                                    <p class="is-size-7 is-uppercase">TBD</p>
+                                    <div class="icon milestone-card-arrow has-text-grey-light">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <hr>
+
+    <section id="milestone-1" class="section">
+        <div class="container">
+            <h1 class="title">Milestone 1</h1>
+            <h2 class="subtitle">Evaluate some computing-related task or problem</h2>
+            <p>
+                <span class="has-text-weight-bold">Objective</span>: Demonstrate in-depth analysis of the problem
+                including <br>
+                <span class="has-text-weight-bold">1)</span> Who the users are <br>
+                <span class="has-text-weight-bold">2)</span> Why the problem is important <br>
+                <span class="has-text-weight-bold">3)</span> What existing solutions exist for this problem <br>
+                The key goal of this milestone is to demonstrate a deep understanding of the problem you are addressing.
+            </p>
+            <br>
+            <p>
+                <span class="has-text-weight-bold">Problem</span>: Many students at UGA with disorders and disabilities
+                such as ADHD or visual impairments may wish to request extra testing time for tests in the courses they
+                are taking. However, with the current online resources provided by the University of Georgia’s
+                Disability Resource Center, it is difficult for students with ADHD and other disorders to reschedule
+                tests.
+            </p>
+            <br>
+
+            <a class="button is-primary"><i class="fas fa-chalkboard-teacher"></i>&nbsp; Presentation</a>
+            <a class="button is-primary"><i class="fas fa-file-alt"></i>&nbsp; Report</a>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="milestone-2" class="section">
+        <div class="container">
+            <h1 class="title">Milestone 2</h1>
+            <h2 class="subtitle">Develop interface design alternatives for the tasks and problem</h2>
+            <a class="button is-primary">TBD</a>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="milestone-3" class="section">
+        <div class="container">
+            <h1 class="title">Milestone 3</h1>
+            <h2 class="subtitle">Implement a prototype of one of the alternatives</h2>
+            <a class="button is-primary">TBD</a>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="milestone-4" class="section">
+        <div class="container">
+            <h1 class="title">Milestone 4</h1>
+            <h2 class="subtitle">Evaluate the design</h2>
+            <a class="button is-primary">TBD</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                &copy; Bright Solutions 2020
+            </p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

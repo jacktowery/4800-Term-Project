@@ -17,8 +17,10 @@
 //$grey-lighter: $one-light-blue;
 //$grey-light: $one-light-gray;
 
-//$primary: $purple3;
-//$link: $primary;
+$custom-blue: #395ff7;
+
+$primary: $custom-blue;
+$link: $primary;
 
 //* ------------------------------------------------------
 // Import only what you need from Bulma
@@ -26,3 +28,28 @@
 //* ------------------------------------------------------
 
 // Overwrite some rules for customization
+
+.card {
+    border-radius: 20px;
+}
+
+.milestone-card {
+    background-color: $white;
+
+    .milestone-card-arrow {
+        margin-top: 5px;
+        transform: translate(0, 0);
+        transition: transform 0.3s;
+    }
+
+}
+
+.milestone-card:hover {
+    background-color: $primary;
+    color: #fff;
+    transition: background-color 0.7s ease;
+
+    .milestone-card-arrow {
+        transform: translate(0, 8px);
+    }
+}
