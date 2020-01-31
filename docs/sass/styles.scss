@@ -53,3 +53,10 @@ $link: $primary;
         transform: translate(0, 8px);
     }
 }
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}

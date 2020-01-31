@@ -7117,3 +7117,9 @@ label.panel-block {
   transition: background-color 0.7s ease; }
   .milestone-card:hover .milestone-card-arrow {
     transform: translate(0, 8px); }
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; }
